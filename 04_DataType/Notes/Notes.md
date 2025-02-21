@@ -21,11 +21,11 @@ Primitive data types in JavaScript are **immutable** (their value cannot be chan
 - A string represents a sequence of characters enclosed in single (`'`) or double (`"`) quotes.
   
   ```javascript
-  let greeting = "Hello, World!";
-  let name = 'John Doe';
+  let greeting = "Namaste, Duniya!";
+  let name = 'Rahul Sharma';
   
   console.log(typeof greeting); // string
-  console.log(greeting);        // "Hello, World!"
+  console.log(greeting);        // "Namaste, Duniya!"
   ```
 
 - **Important Methods for Strings:**
@@ -47,10 +47,10 @@ Primitive data types in JavaScript are **immutable** (their value cannot be chan
 
   ```javascript
   let age = 25;
-  let temperature = 36.6;
+  let temperature = 37.5;
   
   console.log(typeof age);           // number
-  console.log(age + temperature);    // 61.6
+  console.log(age + temperature);    // 62.5
   ```
 
 - **Important Methods for Numbers:**
@@ -120,12 +120,12 @@ Unlike primitive types, **objects** are **mutable** (can be changed), and they a
 
   ```javascript
   let person = {
-    name: "John",
+    name: "Rahul",
     age: 30,
     isEmployed: true
   };
   
-  console.log(person.name);       // "John"
+  console.log(person.name);       // "Rahul"
   console.log(person["age"]);     // 30
   ```
 
@@ -137,14 +137,14 @@ Unlike primitive types, **objects** are **mutable** (can be changed), and they a
   ```javascript
   console.log(person.hasOwnProperty('name'));  // true
   console.log(Object.keys(person));           // ["name", "age", "isEmployed"]
-  console.log(Object.values(person));         // ["John", 30, true]
+  console.log(Object.values(person));         // ["Rahul", 30, true]
   ```
 
 #### **Array**
 - An array is an ordered collection of elements, which can be of any data type.
 
   ```javascript
-  let fruits = ["Apple", "Banana", "Cherry"];
+  let fruits = ["Apple", "Banana", "Mango"];
   
   console.log(fruits[0]);    // "Apple"
   console.log(fruits.length); // 3
@@ -158,7 +158,7 @@ Unlike primitive types, **objects** are **mutable** (can be changed), and they a
 
   ```javascript
   fruits.push("Orange");
-  console.log(fruits); // ["Apple", "Banana", "Cherry", "Orange"]
+  console.log(fruits); // ["Apple", "Banana", "Mango", "Orange"]
   ```
 
 #### **Function**
@@ -166,10 +166,10 @@ Unlike primitive types, **objects** are **mutable** (can be changed), and they a
 
   ```javascript
   function greet(name) {
-    return "Hello, " + name + "!";
+    return "Namaste, " + name + "!";
   }
   
-  console.log(greet("John")); // "Hello, John!"
+  console.log(greet("Rahul")); // "Namaste, Rahul!"
   ```
 
 #### **Date**
@@ -224,7 +224,7 @@ console.log(typeof num);  // "number"
 let isTrue = true;
 console.log(typeof isTrue);  // "boolean"
 
-let person = { name: "Alice", age: 25 };
+let person = { name: "Amit", age: 25 };
 console.log(typeof person);  // "object"
 ```
 
@@ -249,4 +249,3 @@ JavaScript provides various **data types** that allow developers to store, manip
 5. How do you check if a variable is an object in JavaScript?
 
 ---
-
