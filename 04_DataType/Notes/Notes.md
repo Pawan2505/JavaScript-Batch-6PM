@@ -247,6 +247,7 @@ JavaScript provides various **data types** that allow developers to store, manip
 3. Explain what **type coercion** is and provide an example.
 4. What is the difference between `let` and `const` when declaring variables?
 5. How do you check if a variable is an object in JavaScript?
-
+  
 ---
 
+     
