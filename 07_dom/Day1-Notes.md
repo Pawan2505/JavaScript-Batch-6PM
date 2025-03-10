@@ -1,4 +1,4 @@
-### **Simple Notes on JavaScript DOM Manipulation**
+### **JavaScript DOM Manipulation**
 
 #### **What is the DOM?**
 
