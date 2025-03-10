@@ -1,252 +1,160 @@
-// function show() {
-//     let box = document.getElementById("input-box").value;
-//     console.log(isNaN(box));
-//     if (isNaN(box)) {
-//         console.log(box);
-
-//     } else {
-//          console.log("Input box is empty!");
-//     }
+// // 1. Function Declaration (Named Functions)
+// // Function definition with a name and called explicitly
+// function greet() {
+//   console.log("Good Morning!");
 // }
+// greet(); // Calling the function
 
-// function
-
-// 1.Function Declaration (Named Functions)
-// 2. Anonymous Functions (Function Expressions)
-// 3. Arrow Functions (ES6 Feature)
-// 4.  Nested Functions
-// 5. Closer Function
-// 6. IIFE (Immediately Invoked Function Expressions)
-// 7. Recursion Function
-
-//  1.Function Declaration (Named Functions)
-
-// function greet() {  // definition
-//     console.log("Good Morning!")
+// // Addition function with parameters
+// function addition(x, y) {
+//   let result = x + y; // performing addition
+//   return result; // returning the result
 // }
+// console.log("Sum of both numbers: ", addition(10, 20)); // Calling with arguments
 
-// greet(); // call
-
-// function addition(x, y) { // fn def -> parameter
-//     let result = x + y;
-//     return result;
-// }
-
-//call -> argument
-// console.log("Sum of both number : ",addition(10, 20));
-// console.log("Sum of both number : "+ addition(10, 20));
-
-// console.log(`Sum of both numberfght :  ${addition(10, 20)}`);
-
-// Anonymous Functions (Function Expressions)
-
-// let funs = function() {
-//     console.log("Hello World!")
-// }
-
-// console.log(funs)
-// funs();
-
+// // 2. Anonymous Functions (Function Expressions)
+// // An anonymous function assigned to a variable (no name)
 // let funs = function () {
-
-//     return "Anonymous Functions (Function Expressions)";
+//   console.log("Hello World!");
 // };
+// funs(); // Calling the function
 
-// console.log(funs());
-
-// const sumConst = function(num1, num2) {
-//     console.log(num1 + num2);
+// // Function returning a string (Anonymous Function)
+// let funs2 = function () {
+//   return "Anonymous Functions (Function Expressions)";
 // };
+// console.log(funs2()); // Calling the function
 
-// sumConst(10, 20); // Output: 30
+// // Using a const to define an anonymous function
+// const sumConst = function (num1, num2) {
+//   console.log(num1 + num2); // Output the sum
+// };
+// sumConst(10, 20); // Calling function
 
-// sumConst = "hello"; // ❌ ERROR: Cannot reassign a `const` variable
+// // Error when trying to reassign a const function
+// // sumConst = "hello"; // Uncomment to see the error
 
+// // 3. Arrow Functions (ES6 Feature)
+// // Shortened function syntax using arrow notation
 
-//  Arrow Functions (ES6 Feature)
+// const arrow = () => console.log("Hello"); // Function with no parameters
+// arrow(); // Calling the arrow function
 
-
-// const arrow = () => console.log("Hello")
-
-// arrow();
-
-
+// // Arrow function with parameters
 // const add = (x, y) => {
-//     console.log(`Add : ${x + y}`);
-// }
-
-// add(10,20)
-
-
-// const add = (x, y = 50) => {
-//     console.log(`Add : ${x + y}`);
-// }
-
-// add(10)
-
-// const add = (x, y = 50) => {
-//     console.log(`Add : ${x + y}`);
-// }
-
-// add(10,100)
-
-// best practice -> default ko right se do
-// const add = (x = 80, y) => {
-//     console.log(x)
-//     console.log(y)
-//   console.log(`Add : ${x + y}`);
+//   console.log(`Add: ${x + y}`);
 // };
+// add(10, 20); // Calling function
 
-// add(100);
+// // Arrow function with default parameters
+// const addWithDefault = (x, y = 50) => {
+//   console.log(`Add: ${x + y}`);
+// };
+// addWithDefault(10); // y defaults to 50 if not passed
+// addWithDefault(10, 100); // y is set to 100
 
-// const sub = ()=>{
-//     let x = 10;
-//     let y = 5;
+// // Best practice for default parameters
+// const addWithDefaultRight = (x = 80, y) => {
+//   console.log(x);
+//   console.log(y);
+//   console.log(`Add: ${x + y}`);
+// };
+// addWithDefaultRight(100); // Only x is passed
 
-//     return x-y;
+// // 4. Nested Functions
+// // Function inside another function
+
+// function outerfn() {
+//   console.log("Outer Function Called..");
+
+//   // Inner function
+//   function innerfn() {
+//     console.log("Inner Function Called..");
+//   }
+
+//   innerfn(); // Calling inner function
+// }
+// outerfn(); // Calling outer function
+
+// // 5. Closures
+// // Function returning another function
+
+// function outerfnClosure() {
+//   let x = 10;
+//   return function innerfnClosure() {
+//     return x++; // Increment x on each call
+//   };
 // }
 
-// console.log(sub())
+// let inner = outerfnClosure(); // inner is now a closure
+// console.log(inner()); // 10
+// console.log(inner()); // 11
+// console.log(inner()); // 12
+// console.log(inner()); // 13
 
+// // 6. Recursion Function
+// // A function calling itself to solve a problem
 
-// IIFE (Immediately Invoked Function Expressions)
+// // Sum of n natural numbers using recursion
+// function sum(x) {
+//   if (x == 1) {
+//     return 1; // Base condition
+//   }
+//   return x + sum(x - 1); // Recursively calling sum
+// }
 
+// const result = sum(10); // Sum of numbers from 1 to 10
+// console.log(result); // Output the result
+
+// // 7. IIFE (Immediately Invoked Function Expressions)
+// // Function that runs immediately after being defined
 
 // (function () {
-//     console.log("I am Immediately Invoked Function Expressions");
+//   console.log("I am an Immediately Invoked Function Expression");
 // })();
 
+// // IIFE with parameters
+// (function (x, y) {
+//   console.log(`Multiply: ${x * y}`);
+// })(10, 20); // Parameters passed immediately
 
-// (function (x,y) {
-//     console.log(`Multiply : ${x * y}`);
-// })(10,20);
-
-
-// const result = (function (x,y) {
-//     return x * y;
+// // Storing IIFE result in a variable
+// const result2 = (function (x, y) {
+//   return x * y;
 // })(10, 20);
+// console.log(result2); // Output: 200
 
-// console.log(result)
+// // Hoisting in JavaScript
 
-
-//  Nested Functions
-
-
-// // step : 1
-
-// function outerfn() {
-    
-//     console.log("Outer Function Called..");
-//     function innerfn() {
-//         console.log("Inner Function Called..")
-//     }
-// }
-
-
-// outerfn();
-
-
-
-// // step : 2
-
-// function outerfn() {
-    
-//     console.log("Outer Function Called..");
-//     function innerfn() {
-//         console.log("Inner Function Called..")
-//     }
-
-//     innerfn();
-// }
-
-
-// outerfn();
-
-// step : 3
-
-// function outerfn() {
-
-//     let x = 10;
-//  return function innerfn() {
-//      return x++;
-//     }
-// }
-
-
-// let inner = outerfn();
-
-
-// console.log(inner()); // 10
-// console.log(inner());
-// console.log(inner());
-// console.log(inner());
-
-
-
-//  Recursion Function
-
-
-// n natural number sum by recursion
-
-// 1. base condition
-// 2. iteself calling
-
-
-// function sum(x) {
-    
-//     if (x == 1) {
-//         return 1;
-//     }
-
-//     return x + sum(x - 1);
-// }
-
-// const result = sum(10);
-
-// console.log(result);
-
-// Hoisting in javascript
-
-// Hoisting Function
-
-// greet();
+// // Function Hoisting - Can be called before definition due to hoisting
+// greet(); // Calling before definition
 // function greet() {
-//     console.log("Namaste!");
+//   console.log("Namaste!");
 // }
 
+// // Variable Hoisting with var
+// console.log(x); // undefined due to hoisting
+// var x = 40;
+// console.log(x); // 40 after initialization
 
-//Not Hoisting Function => we can not call that fun before function definition
-
-// add(10, 30);
-
-// const add = (x, y) => {
-//     console.log(x + y);
-// }
-
-
-// fun()
-
-// const fun = function () {
-//     console.log("Anonymous called..")
-// }
-
-
-// hoisting variable be can create by var keyword
-
-// console.log(x)
-
-// var x = 40
-
-// console.log(x)
-
-// // not hoisting variable -> let
-
-// console.log(y)
-
+// // Variable Hoisting with let/const (not hoisted)
+// console.log(y); // ReferenceError: Cannot access 'y' before initialization
 // let y = 12;
+// console.log(y); // 12 after initialization
 
-// console.log(y)
-
-// console.log(z)
+// // Hoisting with const
+// console.log(z); // ReferenceError: Cannot access 'z' before initialization
 // const z = 12;
-// console.log(z)
+// console.log(z); // 12 after initialization
+
+// // Not Hoisted - Arrow functions, and function expressions (assigned to variables)
+// add(10, 30); // Error: Cannot call before definition
+// const add = (x, y) => {
+//   console.log(x + y);
+// };
+
+// // Anonymous function assigned to variable (not hoisted)
+// fun(); // Error: Cannot call before definition
+// const fun = function () {
+//   console.log("Anonymous function called..");
+// };
