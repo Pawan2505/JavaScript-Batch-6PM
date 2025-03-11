@@ -1,10 +1,6 @@
-
----
-
 ## **JavaScript DOM Manipulation and Event Handling**
 
-### **Objective:**
-In this Note4s, we will learn how to manipulate the Document Object Model (DOM) using JavaScript. Key topics include selecting elements, creating new elements, handling events, and working with user input.
+In this Notes, we will learn how to manipulate the Document Object Model (DOM) using JavaScript. Key topics include selecting elements, creating new elements, handling events, and working with user input.
 
 ---
 
