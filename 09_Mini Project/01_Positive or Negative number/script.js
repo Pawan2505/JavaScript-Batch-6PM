@@ -1,36 +1,26 @@
-// function checkNumber(num) {
-
-//     if (num > 0) {
-//        console.log("Positive Number!")
-//     }
-//     else if (num < 0) {
-//          console.log("Negative Number!");
-//     } else {
-//         console.log("Nutral Number!")
-//     }
-
-// }
-
-// let num = parseInt(prompt("Enter Number :"));
-
-// checkNumber(num);
-
 function checkNumber() {
+  // Get the input value and parse it as a number
+  const inputBox = document.getElementById("input-box").value;
 
-    const inputBox = parseInt(document.getElementById("input-box").value);
-    
-    const data = document.getElementById("answer");
-    
-    if (inputBox > 0) {
-      
-        data.innerHTML = `<i>Positive Number!</i>`;
-        
-    } else if (inputBox < 0) {
-        
-        data.innerHTML = `<i>Negative Number!</i>`;
-        
-    } else {
-        
-        data.innerHTML = `<i>Nutral Number!</i>`;
-     }
+  // Check if the input is a valid number
+  if (isNaN(inputBox) || inputBox.trim() === "") {
+    document.getElementById("answer").innerHTML =
+      "<i>Please enter a valid number.</i>";
+
+    return;
+  }
+
+  const num = parseInt(inputBox);
+
+  // Get the answer element to update the result
+  const data = document.getElementById("answer");
+
+  // Logic to check the type of number
+  if (num > 0) {
+    data.innerHTML = "<i>Positive Number!</i>";
+  } else if (num < 0) {
+    data.innerHTML = "<i>Negative Number!</i>";
+  } else {
+    data.innerHTML = "<i>Neutral Number!</i>"; 
+  }
 }
