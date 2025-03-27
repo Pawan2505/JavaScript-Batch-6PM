@@ -82,3 +82,4 @@ personAccessingWithThis.display();
 // 2. Methods are functions that belong to an object and are used to perform actions related to that object.
 
 // 3. The `this` keyword refers to the current object inside its method, which allows access to its properties.
+
