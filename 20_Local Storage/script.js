@@ -1,83 +1,76 @@
-// let name = "Poojan";
+// ------------------------------------------
+// 🔹 1. Store & Retrieve a String
+// ------------------------------------------
+let name = "Poojan";
+localStorage.setItem("student", name);
 
-// localStorage.setItem("student", name);
+let username = localStorage.getItem("student");
+console.log("Username:", username); // Output: Poojan
 
-// let username = localStorage.getItem("student");
+// ------------------------------------------
+// 🔹 2. Store a Number (treated as string)
+// ------------------------------------------
+let num = 12;
+localStorage.setItem("student", num);
 
-// console.log(username)
+let usernameNum = localStorage.getItem("student");
+console.log("Stored Number:", usernameNum); // Output: "12"
+console.log("Type of stored number:", typeof usernameNum); // string
 
-// let num = 12;
+// ------------------------------------------
+// 🔹 3. Store an Object using JSON.stringify
+// ------------------------------------------
+const obj1 = {
+  id: 1,
+  username: "Poojan",
+  course: "Full Stack",
+};
 
-// localStorage.setItem("student", num);
+// Always convert object to JSON string before storing
+localStorage.setItem("user", JSON.stringify(obj1));
 
-// let username = localStorage.getItem("student");
+// ------------------------------------------
+// 🔹 4. Retrieve & Parse Object from localStorage
+// ------------------------------------------
+let data = localStorage.getItem("user");
+console.log("Raw JSON string:", data); // string
 
-// console.log(username);
+let finalData = JSON.parse(data);
+console.log("Parsed Object:", finalData); // object
+console.log("Type after parsing:", typeof finalData); // object
 
-// console.log(typeof username);
+// ------------------------------------------
+// 🔹 5. Update Object and Save Again
+// ------------------------------------------
+obj1.salary = 235346;
+localStorage.setItem("user", JSON.stringify(obj1));
 
+let updatedUser = localStorage.getItem("user");
+console.log("Updated Object:", JSON.parse(updatedUser));
 
-// const obj1 = {
-//     id: 1,
-//     usename: "Poojan",
-//     course:"Full Stack"
-// }
+// ------------------------------------------
+// 🔹 6. Modify Existing Property
+// ------------------------------------------
+obj1.course = "MERN";
+localStorage.setItem("user", JSON.stringify(obj1));
 
-// // localStorage.setItem("user", obj1);
+let modifiedUser = localStorage.getItem("user");
+console.log("Modified Course:", JSON.parse(modifiedUser));
 
-// localStorage.setItem("user", JSON.stringify(obj1));
+// ------------------------------------------
+// 🔹 7. Delete a Property and Update Storage
+// ------------------------------------------
+delete obj1.salary;
+localStorage.setItem("user", JSON.stringify(obj1));
 
+let afterDelete = localStorage.getItem("user");
+console.log("After Deleting Salary:", JSON.parse(afterDelete));
 
-// let data = localStorage.getItem("user");
-// console.log(data)
-
-// console.log(typeof data)
-
-// let finalData = JSON.parse(data);
-
-// console.log(finalData)
-
-// console.log(typeof finalData)
-
-// obj1.salary = 235346;
-// localStorage.setItem("user", JSON.stringify(obj1));
-// console.log(obj1)
-
-// let result = localStorage.getItem("user");
-
-// console.log(JSON.parse(result));
-
-
-// obj1.course = "MERN"
-
-// localStorage.setItem("user", JSON.stringify(obj1));
-
-// let updatedata = localStorage.getItem("user");
-
-// console.log(JSON.parse(updatedata))
-
-// delete obj1.salary;
-// localStorage.setItem("user", JSON.stringify(obj1));
-
-// let afterdelete = localStorage.getItem("user");
-
-// console.log(JSON.parse(afterdelete));
-
-
-
-// JSON -> Javascript object notation
-
-// key -> string formate
-// json -> function nhi bana skte
-
-// and all propert of json same as object
-
-
-// let person = {
-//   id: 1,
-//   name: "Pawan", 
-
-// };
-
-
-// localStorage.setItem("jsondata", JSON.stringify(person));
+// ------------------------------------------
+// 🔸 JSON Notes (for lecture explanation)
+// ------------------------------------------
+// JSON -> JavaScript Object Notation
+// ✅ Only data (no functions, no comments)
+// ✅ All keys must be in double quotes (string format)
+// ✅ Functions, undefined, symbols not allowed
+// ✅ Structure is same as JS object (syntax differs slightly)
