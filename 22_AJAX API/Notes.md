@@ -1,0 +1,1 @@
+AJAX is a technique (not a language) that uses JavaScript to send and receive data asynchronously from a web server, allowing dynamic content updates without reloading the entire web page.
