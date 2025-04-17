@@ -18,10 +18,10 @@ async function fetchDetails() {
 
     data.users.forEach((user) => {
         let tableRow = document.createElement("tr");
-        
+        tableRow.classList.add("")
         tableRow.innerHTML = `
         
-        <td>${user.id}</td>
+        <td class="">${user.id}</td>
         <td>${user.firstName} ${user.lastName}</td>
         `;
         tableTag.appendChild(tableRow);  
